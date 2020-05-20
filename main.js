@@ -15,7 +15,7 @@ $(document).ready(function() {
             array_dischi = data.response;
             console.log(array_dischi);
             var disco1 = {};
-            
+
             for (var i = 0; i < array_dischi.length; i++) {
                 disco1.author = array_dischi[i].author;
                 disco1.title = array_dischi[i].title;
@@ -37,11 +37,12 @@ $(document).ready(function() {
         $('.disco').append(html);
     }
 
-    $('.custom-select .scelta').click(function(){
-        console.log($(this));
-        // $('.cds-container.containerx').removeClass('main-visible');
-        // var data_genere = $(this).attr('data-genere');
-        // $('.cds-container.containerx[data-genere="'+ data_genere +'"]').addClass('main-visible');
+    $('.custom-select').change(function(){
+        $('.cds-container.containerx').removeClass('main-visible');
+
+        var data_genere = $(this).children('option:selected').val();
+
+        $('.cds-container.containerx[data-genere="'+ data_genere +'"]').addClass('main-visible');
     });
 
 

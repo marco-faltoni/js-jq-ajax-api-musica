@@ -5,6 +5,8 @@
 
 $(document).ready(function() {
     var array_dischi;
+    var template_html = $('#template-handlebars').html();
+    var template = Handlebars.compile(template_html);
 
 	$.ajax({
         'url':'https://flynn.boolean.careers/exercises/api/array/music',
@@ -13,11 +15,18 @@ $(document).ready(function() {
             array_dischi = data.response;
             console.log(array_dischi);
             var disco1 = {};
-            for (var key in array_dischi[0]) {
-                var valori = array_dischi[0][key];
-                disco1.push(valori);
-                console.log(disco1);
+            // for (var key in array_dischi[0]) {
+            //     var valore = array_dischi[0].author;
+            //     disco1.author =
+            // }
+            for (var i = 0; i < array_dischi.length; i++) {
+                disco1.author = array_dischi[i].author;
+                disco1.title = array_dischi[i].title;
+                disco1.year = array_dischi[i].year;
+                disco1.poster = array_dischi[i].poster;
+                handlebars(disco1);
             }
+            console.log(disco1);
         },
         'error': function() {
             alert('si è verificato un errore');
@@ -25,13 +34,15 @@ $(document).ready(function() {
     })
 
 
+    function handlebars(disco) {
+        var html = template(disco);
+        $('.disco').append(html);
+    }
 
 
 
 
-    // var template_html = $('#template-handlebars').html();
-    // var template = Handlebars.compile(template_html);
-    //
+
     // var data = {
     //     title : '',
     //     author : '',
@@ -39,8 +50,7 @@ $(document).ready(function() {
     //     poster : '',
     // };
     //
-    // var html = template(data);
-    // $('.cds-container container').append('.cd');
+
     //
     // do {
     //     $('#box').append('.cd');

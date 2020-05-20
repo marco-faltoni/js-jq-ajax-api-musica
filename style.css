@@ -41,11 +41,15 @@ header img {
 }
 
 .cds-container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     /* padding: 100px 0; */
+}
+
+.main-visible {
+    display: block;
 }
 
 .cd {

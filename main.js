@@ -15,15 +15,13 @@ $(document).ready(function() {
             array_dischi = data.response;
             console.log(array_dischi);
             var disco1 = {};
-            // for (var key in array_dischi[0]) {
-            //     var valore = array_dischi[0].author;
-            //     disco1.author =
-            // }
+            
             for (var i = 0; i < array_dischi.length; i++) {
                 disco1.author = array_dischi[i].author;
                 disco1.title = array_dischi[i].title;
                 disco1.year = array_dischi[i].year;
                 disco1.poster = array_dischi[i].poster;
+                disco1.genre = array_dischi[i].genre;
                 handlebars(disco1);
             }
             console.log(disco1);
@@ -39,6 +37,12 @@ $(document).ready(function() {
         $('.disco').append(html);
     }
 
+    $('.custom-select .scelta').click(function(){
+        console.log($(this));
+        // $('.cds-container.containerx').removeClass('main-visible');
+        // var data_genere = $(this).attr('data-genere');
+        // $('.cds-container.containerx[data-genere="'+ data_genere +'"]').addClass('main-visible');
+    });
 
 
 

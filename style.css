@@ -10,10 +10,10 @@ body {
     min-height: 100vh;
 }
 
-.container {
-    width: 1070px;
+.containerx {
+    /* width: 1070px;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 auto; */
 }
 
 header {
@@ -26,6 +26,11 @@ header img {
     margin-top: 10px;
 }
 
+.select {
+    width: 50%;
+    margin: 20px auto;
+}
+
 .disco {
     width: 80%;
     height: 1200px;
@@ -36,8 +41,6 @@ header img {
 }
 
 .cds-container {
-    width: 20%;
-    height: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,10 +53,10 @@ header img {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    flex-basis: 200px;
+    width: 230px;
+    height: 410px;
     padding: 20px;
     margin: 10px 20px;
-    height: 360px;
     background: rgb(46, 58, 70);
     text-align: center;
 }
@@ -77,3 +80,31 @@ header img {
 .cd span.year {
     color: grey;
 }
+
+@media all and (max-width: 530px) {
+    .containerx {
+        width: 80%;
+        height: 40%;
+    }
+};
+
+@media all and (min-width: 531px) and (max-width: 767px) {
+    .containerx {
+        width: 50%;
+        height: 40%;
+    }
+};
+
+@media all and (min-width: 1040px) and (max-width: 1300px) {
+    .containerx {
+        width: 33%;
+        height: 40%;
+    }
+};
+
+@media all and (min-width: 1301px) {
+    .containerx {
+        width: 25%;
+        height: 40%;
+    }
+};

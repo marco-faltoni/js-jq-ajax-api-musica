@@ -2,18 +2,29 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ex-dischi-musicali</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
-            <div class="container">
+            <div class="containerx">
                 <img src="logo.png" alt="logo" />
             </div>
         </header>
+        
+        <div class="select">
+            <select class="custom-select">
+                <option selected>Scegli il genere musicale</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
 
         <div class="disco">
 
@@ -21,7 +32,7 @@
 
         <script id="template-handlebars" type="text/x-handlebars-template">
             <!-- Disco ad esempio -->
-            <div class="cds-container container">
+            <div class="cds-container containerx">
                 <div class="cd">
                     <img src="{{poster}}" alt="">
                     <h3>{{title}}</h3>

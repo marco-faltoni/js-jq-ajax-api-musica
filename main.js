@@ -3,7 +3,7 @@
 // BONUS: creare una select con i generi dei dischi musicali (pop, rock, metal, jazz), tramite la quale si possono filtrare i dischi visualizzati (ad esempio: se nella tendina si seleziona il genere "metal", nella pagina saranno mostrati solo i dischi con il genere "metal").
 
 $(document).ready(function() {
-    
+
     // creo una var vuota da richiamare dentro l'AJAX
     var array_dischi;
 
@@ -56,6 +56,10 @@ $(document).ready(function() {
 
         // faccio combaciare il valore che ho letto prima(che contiene il genere musicale), con l'attributo data-genere presente nel container, che avrà come valore il genere giusto perchè glie lo vado a mettere con handlebars a priori.
         $('.cds-container.containerx[data-genere="'+ data_genere +'"]').addClass('main-visible');
+
+        if ($(this).children('option:selected').attr('data')) {
+            $('.cds-container.containerx').addClass('main-visible');
+        }
     });
 
 
